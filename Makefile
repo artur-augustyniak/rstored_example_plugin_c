@@ -11,8 +11,10 @@ $(LIBNAME).so: $(LIBNAME).o
 $(LIBNAME).o: $(src)
 	$(CC) -c -fPIC $(CC_OPTS) $(src) -o $(LIBNAME).o
 
+#man install
 .PHONY: copy
 copy: $(LIBNAME).so
+	rm -f /tmp/$(LIBNAME).so
 	cp -f $(LIBNAME).so /tmp/
 
 .PHONY: clean
